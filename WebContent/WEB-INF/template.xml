@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+       
+<tiles-definitions>
+  <definition name="all.template" template="/WEB-INF/templates/template.jsp">
+    <put-attribute name="header" value="/WEB-INF/templates/header.jsp" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/templates/footer.jsp" />
+  </definition>
+  
+   <definition name="public.index" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/index/index.jsp" />
+  </definition>
+  
+  <definition name="public.cart_product" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/cart_product.jsp" />
+  </definition>
+  
+  <definition name="public.contact" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/contact.jsp" />
+  </definition>
+  
+  <definition name="public.detail_product" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/detail_product.jsp" />
+  </definition>
+  
+  <definition name="public.help" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/help.jsp" />
+  </definition>
+  
+  <definition name="public.introduction" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/introduction.jsp" />
+  </definition>
+  
+  <definition name="public.products" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/products.jsp" />
+  </definition>
+  
+  <definition name="public.pay" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/pay.jsp" />
+  </definition>
+   <definition name="public.searchProduct" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/searchproduct.jsp" />
+  </definition>
+  
+  <definition name="public.tranfer" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/tranfer.jsp" />
+  </definition>
+  <definition name="public.paypal" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/paypal.jsp" />
+  </definition>
+  
+  <definition name="public.product_detail" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/detail_product.jsp" />
+  </definition>
+  
+  <definition name="public.detail_order" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/detail_order.jsp" />
+  </definition>
+  
+  <definition name="public.profile" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/profile.jsp" />
+  </definition>
+  
+   <definition name="public.edit_profile" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/edit_profile.jsp" />
+  </definition>
+  
+   <definition name="public.sugguest" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/other/sugguest.jsp" />
+  </definition>
+  
+<definition name="auth.login" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/auth/login.jsp" />
+  </definition>
+  
+  <definition name="auth.signup" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/auth/signup.jsp" />
+  </definition>
+  
+  <definition name="admin.cat_admin" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/cat_admin.jsp" />
+  </definition>
+  
+  <definition name="admin.order_search" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/order_search.jsp" />
+  </definition>
+  
+  <definition name="admin.add" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/add.jsp" />
+  </definition>
+  
+  <definition name="admin.add_slide" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/add_slide.jsp" />
+  </definition>
+  
+  <definition name="admin.edit_slide" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/edit_slide.jsp" />
+  </definition>
+  
+  <definition name="admin.edit_product" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/edit_product.jsp" />
+  </definition>
+  <definition name="admin.search_product" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/product_search.jsp" />
+  </definition>
+  
+   <definition name="admin.manager_user" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/manager_user.jsp" />
+  </definition>
+   <definition name="admin.search_user" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/search_user.jsp" />
+  </definition>
+  
+  <definition name="admin.manager_comment" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/manage_comment.jsp" />
+  </definition>
+  
+   <definition name="admin.manager_slide" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/manage_slide.jsp" />
+  </definition>
+  
+   <definition name="admin.add_product" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/add_product.jsp" />
+  </definition>
+  
+   <definition name="admin.manager_discount" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/manage_discount.jsp" />
+  </definition>
+  <definition name="admin.add_discount" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/add_dis.jsp" />
+  </definition>
+  
+   <definition name="admin.contact_admin" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/contact_admin.jsp" />
+  </definition>
+  
+   <definition name="admin.order_admin" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/order_admin.jsp" />
+  </definition>
+  
+   <definition name="admin.product_admin" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/product_admin.jsp" />
+  </definition>
+  
+  <definition name="admin.suggest_admin" extends="all.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/suggest_admin.jsp" />
+  </definition>
+</tiles-definitions>

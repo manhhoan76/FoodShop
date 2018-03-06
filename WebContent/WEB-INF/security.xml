@@ -1,0 +1,48 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+xmlns:beans="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http use-expressions="true">
+		<csrf disabled="true"/>
+
+         <!-- patter - đường dan co th truy cap : permitall- tất cả các accuont dc truy cap -->
+         
+ 		<intercept-url pattern="/admin/cat/add" access="hasRole('ROLE_ADMIN')" />
+ 		<intercept-url pattern="/admin/user/active" access="hasRole('ROLE_ADMIN')" />
+ 		<intercept-url pattern="/admin/cat/edit/**" access="hasRole('ROLE_ADMIN')" />
+ 		<intercept-url pattern="/admin/cat/del/**" access="hasRole('ROLE_ADMIN')" />
+ 		<intercept-url pattern="/admin/user/add" access="hasRole('ROLE_ADMIN')" />
+ 		<intercept-url pattern="/admin/user/edit/**" access="permitAll()" />
+ 		<intercept-url pattern="/admin/user/del/**" access="hasRole('ROLE_ADMIN')" />
+ 		<intercept-url pattern="/admin/user/**" access="hasRole('ROLE_ADMIN')" />
+ 		<intercept-url pattern="/admin/order/**" access="hasRole('ROLE_ADMIN')" /> 
+ 		<intercept-url pattern="/**" access="permitAll()" />
+        <access-denied-handler error-page="/403" />
+ 
+        <form-login login-page='/login' login-processing-url="/login"
+            default-target-url="/" always-use-default-target="false"
+            authentication-failure-url="/login?error=loginErr" username-parameter="username"
+            password-parameter="password" />
+ 
+        <logout logout-url="/logout" logout-success-url="/login"
+            delete-cookies="JSESSIONID" invalidate-session="true" />
+ 
+    </http>
+    
+    <authentication-manager>
+        <!-- authentication from database -->
+        <authentication-provider>
+           	<password-encoder hash="bcrypt" /> 
+            <!-- lấy thông số config  các thông số của Data -->
+            <jdbc-user-service data-source-ref="myDataSource" 
+                users-by-username-query="select username, password, enable from users where username=?"
+                authorities-by-username-query="SELECT username,concat('ROLE_',name) as role FROM users as u INNER JOIN roles as r ON u.role_id=r.role_id WHERE u.username=?" />
+        </authentication-provider>
+    </authentication-manager>
+	<beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+	</beans:bean>
+</beans:beans>
